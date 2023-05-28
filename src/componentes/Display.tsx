@@ -1,10 +1,10 @@
 import { FunctionComponent } from "react";
 
 interface DisplayProps {
-    conteudo?: string,  
+    conteudo?: string
 }
 
-const Display: FunctionComponent = (props: DisplayProps) => {
+const Display: FunctionComponent<DisplayProps> = (props: DisplayProps) => {
 
     return (
         <div className="display">

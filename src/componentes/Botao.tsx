@@ -4,13 +4,13 @@ import CorBotao from "./CorBotao";
 interface BotaoProps {
     rotulo: string,
     cor: CorBotao,
-    pressionar: () => void
+    pressionar: (rotulo: string) => void
 }
 
 const Botao: FunctionComponent<BotaoProps> = (props: BotaoProps) => {
 
     function clicarBotao(){
-        props.pressionar()
+        props.pressionar(props.rotulo)
     }
 
     return (
