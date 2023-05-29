@@ -8,7 +8,7 @@ const Calculadora: FunctionComponent = () => {
 
     const [conteudoDisplay, setConteudoDisplay] = useState<string>("")
 
-    const ultimoBotaoClicadoEhUmNumero = () => {
+    const ultimoValorDoDisplayEhUmNumero = () => {
         const numero = Number(conteudoDisplay.charAt(conteudoDisplay.length - 1))
         return !isNaN(numero)
     }
@@ -20,25 +20,80 @@ const Calculadora: FunctionComponent = () => {
         }
         else {
             switch(rotulo){
-                case "X": case "÷": case "-": case "+": case ".":
-                    if(ultimoBotaoClicadoEhUmNumero()){
-                        alterarDisplay(conteudoDisplay.concat(rotulo))
-                    }
+                case "x": 
+                case "÷": 
+                case "-": 
+                case "+": 
+                    if(ultimoValorDoDisplayEhUmNumero()){
+
+                        if(conteudoDisplay.includes("+")){
+                            const valores: Array<string> = conteudoDisplay.split("+")
+                            const valor1: number = Number(valores[0])
+                            const valor2: number = Number(valores[1])
+                            const soma: number = valor1 + valor2
+                            alterarDisplay(soma.toString() + rotulo)
+                        }
+    
+                        else if(conteudoDisplay.includes("-")){
+                            const valores: Array<string> = conteudoDisplay.split("-")
+                            const valor1: number = Number(valores[0])
+                            const valor2: number = Number(valores[1])
+                            const subtracao: number = valor1 - valor2
+                            alterarDisplay(subtracao.toString() + rotulo)
+                        }
+    
+                        else if(conteudoDisplay.includes("x")){
+                            const valores: Array<string> = conteudoDisplay.split("x")
+                            const valor1: number = Number(valores[0])
+                            const valor2: number = Number(valores[1])
+                            const multiplicacao: number = valor1 * valor2
+                            alterarDisplay(multiplicacao.toString() + rotulo)
+                        }
+    
+                        else if(conteudoDisplay.includes("÷")){
+                            const valores: Array<string> = conteudoDisplay.split("÷")
+                            const valor1: number = Number(valores[0])
+                            const valor2: number = Number(valores[1])
+                            const divisao: number = valor1 / valor2
+                            alterarDisplay(divisao.toString() + rotulo)
+                        }
+
+                        else{
+                            alterarDisplay(conteudoDisplay.concat(rotulo))
+                        }
+                    }            
                     break
                 
+                case ".":
+                    break
                 case "+/-":
                     break
-                    
+
                 case "=":
                     break
                 
                 case "C":
+                    alterarDisplay("0")
                     break
 
                 case "CE":
+                    if(conteudoDisplay.length >= 1){
+                        if(conteudoDisplay.length === 1 && conteudoDisplay.charAt(0) !== "0"){
+                            alterarDisplay("0")
+                        }
+                        else {
+                            alterarDisplay(conteudoDisplay.slice(0, -1))
+                        }
+                    }
                     break
                 
                 case "S":
+                    if(conteudoDisplay === ""){
+                        alterarDisplay("0")
+                    }
+                    else{
+                        alterarDisplay("")
+                    }
                     break
             }
         }
@@ -47,7 +102,7 @@ const Calculadora: FunctionComponent = () => {
 
     const alterarDisplay = (conteudo: string) => {
         setConteudoDisplay(conteudo)
-    }   
+    }
  
     return (
         <div className="calculadora-container">
@@ -64,7 +119,7 @@ const Calculadora: FunctionComponent = () => {
                     <Botao rotulo="7" cor={CorBotao.CINZA} pressionar={obterRotuloDoBotao}/>
                     <Botao rotulo="8" cor={CorBotao.CINZA} pressionar={obterRotuloDoBotao}/>
                     <Botao rotulo="9" cor={CorBotao.CINZA} pressionar={obterRotuloDoBotao}/>
-                    <Botao rotulo="X" cor={CorBotao.VERDE} pressionar={obterRotuloDoBotao}/>
+                    <Botao rotulo="x" cor={CorBotao.VERDE} pressionar={obterRotuloDoBotao}/>
                 </div>
                 <div className="linha-de-botoes">
                     <Botao rotulo="4" cor={CorBotao.CINZA} pressionar={obterRotuloDoBotao}/>
