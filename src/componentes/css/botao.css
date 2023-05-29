@@ -2,16 +2,30 @@
     width: 5rem;
     height: 5rem;
     font-size: 2rem;
-    font-weight: bold;
-    color: white;
-    border-radius: 10px;
+    font-weight: 500;
+    border-radius: 8px;
     border-style: none;
+    cursor: pointer;
 }
 
 .botao-cinza {
-    background-color: rgb(103, 97, 97);
+    background-color: rgb(210, 209, 209);
+    color: black;
+    border: 1px solid rgb(76, 255, 243);
+}
+
+.botao-cinza:hover {
+    background-color: rgb(177, 172, 172);
+    transition-duration: 0.4s;
 }
 
 .botao-verde {
-    background-color: rgb(10, 76, 10);
+    background-color: #00aeff;
+    color: white;
+    border: 1px solid rgb(76, 255, 243);
+}
+
+.botao-verde:hover{
+    background-color: #128ac1;
+    transition-duration: 0.4s;
 }

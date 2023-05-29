@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import "./css/display.css"
 
 interface DisplayProps {
     conteudo?: string

@@ -1,0 +1,12 @@
+.display {
+    width: 23rem;
+    border-radius: 10px;
+    height: 4.3rem;
+    background-color: white;
+    border: 1px solid rgb(76, 255, 243);;
+    font-size: 2.2rem;
+    padding-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
