@@ -8,12 +8,16 @@ const Calculadora: FunctionComponent = () => {
 
     const [conteudoDisplay, setConteudoDisplay] = useState<string>("")
 
-    const ultimoValorDoDisplayEhUmNumero = () => {
+    const alterarDisplay = (conteudo: string): void => {
+        setConteudoDisplay(conteudo)
+    }
+
+    const ultimoValorDoDisplayEhUmNumero = (): boolean => {
         const numero = Number(conteudoDisplay.charAt(conteudoDisplay.length - 1))
         return !isNaN(numero)
     }
 
-    const obterRotuloDoBotao = (rotulo: string) => {
+    const obterRotuloDoBotao = (rotulo: string): void => {
         if(rotulo === "0"){
             if(conteudoDisplay.length === 1 && conteudoDisplay.includes("0")){
                 alterarDisplay("0")
@@ -46,27 +50,23 @@ const Calculadora: FunctionComponent = () => {
                             const soma: number = valor1 + valor2
                             alterarDisplay(soma.toString() + rotulo)
                         }
-    
-                        else if(conteudoDisplay.includes("-")){
-                            
+
+                        else if(conteudoDisplay.includes("-") && conteudoDisplay.split("-").length > 2){
                             if(conteudoDisplay.charAt(0) === "-"){
                                 const conteudoSemMenosInicial = conteudoDisplay.slice(1)
                                 const valores: Array<string> = conteudoSemMenosInicial.split("-")
-                                const valor1: number = -Number(valores[0])
+                                const valor1: number = Number(valores[0]) 
                                 const valor2: number = Number(valores[1])
-                                const subtracao: number = valor1 - valor2
+                                const subtracao: number = (-valor1) - valor2
+                                alterarDisplay(subtracao.toString() + rotulo)
                             }
                             else{
                                 const valores: Array<string> = conteudoDisplay.split("-")
                                 const valor1: number = Number(valores[0])
                                 const valor2: number = Number(valores[1])
                                 const subtracao: number = valor1 - valor2
+                                alterarDisplay(subtracao.toString() + rotulo)
                             }
-                            const valores: Array<string> = conteudoDisplay.split("-")
-                            const valor1: number = Number(valores[0])
-                            const valor2: number = Number(valores[1])
-                            const subtracao: number = valor1 - valor2
-                            alterarDisplay(subtracao.toString() + rotulo)
                         }
     
                         else if(conteudoDisplay.includes("x")){
@@ -104,6 +104,50 @@ const Calculadora: FunctionComponent = () => {
                     break
 
                 case "=":
+                    if(ultimoValorDoDisplayEhUmNumero()){
+                        if(conteudoDisplay.includes("+")){
+                            const valores: Array<string> = conteudoDisplay.split("+")
+                            const valor1: number = Number(valores[0])
+                            const valor2: number = Number(valores[1])
+                            const soma: number = valor1 + valor2
+                            alterarDisplay(soma.toString())
+                        }
+
+                        else if(conteudoDisplay.includes("-") && conteudoDisplay.split("-").length > 1){
+                            
+                            if(conteudoDisplay.charAt(0) === "-" && conteudoDisplay.split("-").length > 2){
+                                const conteudoSemMenosInicial = conteudoDisplay.slice(1)
+                                const valores: Array<string> = conteudoSemMenosInicial.split("-")
+                                const valor1: number = Number(valores[0]) 
+                                const valor2: number = Number(valores[1])
+                                const subtracao: number = (-valor1) - valor2
+                                alterarDisplay(subtracao.toString())
+                            }
+                            else{
+                                const valores: Array<string> = conteudoDisplay.split("-")
+                                const valor1: number = Number(valores[0])
+                                const valor2: number = Number(valores[1])
+                                const subtracao: number = valor1 - valor2
+                                alterarDisplay(subtracao.toString())
+                            }
+                        }
+    
+                        else if(conteudoDisplay.includes("x")){
+                            const valores: Array<string> = conteudoDisplay.split("x")
+                            const valor1: number = Number(valores[0])
+                            const valor2: number = Number(valores[1])
+                            const multiplicacao: number = valor1 * valor2
+                            alterarDisplay(multiplicacao.toString())
+                        }
+    
+                        else if(conteudoDisplay.includes("÷")){
+                            const valores: Array<string> = conteudoDisplay.split("÷")
+                            const valor1: number = Number(valores[0])
+                            const valor2: number = Number(valores[1])
+                            const divisao: number = valor1 / valor2
+                            alterarDisplay(divisao.toString())
+                        }
+                    }
 
                     break
                 
@@ -133,10 +177,6 @@ const Calculadora: FunctionComponent = () => {
             }
         }
 
-    }
-
-    const alterarDisplay = (conteudo: string) => {
-        setConteudoDisplay(conteudo)
     }
  
     return (
