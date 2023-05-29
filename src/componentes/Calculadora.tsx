@@ -48,6 +48,20 @@ const Calculadora: FunctionComponent = () => {
                         }
     
                         else if(conteudoDisplay.includes("-")){
+                            
+                            if(conteudoDisplay.charAt(0) === "-"){
+                                const conteudoSemMenosInicial = conteudoDisplay.slice(1)
+                                const valores: Array<string> = conteudoSemMenosInicial.split("-")
+                                const valor1: number = -Number(valores[0])
+                                const valor2: number = Number(valores[1])
+                                const subtracao: number = valor1 - valor2
+                            }
+                            else{
+                                const valores: Array<string> = conteudoDisplay.split("-")
+                                const valor1: number = Number(valores[0])
+                                const valor2: number = Number(valores[1])
+                                const subtracao: number = valor1 - valor2
+                            }
                             const valores: Array<string> = conteudoDisplay.split("-")
                             const valor1: number = Number(valores[0])
                             const valor2: number = Number(valores[1])
@@ -90,6 +104,7 @@ const Calculadora: FunctionComponent = () => {
                     break
 
                 case "=":
+
                     break
                 
                 case "C":
