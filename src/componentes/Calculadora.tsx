@@ -14,10 +14,23 @@ const Calculadora: FunctionComponent = () => {
     }
 
     const obterRotuloDoBotao = (rotulo: string) => {
-        
-        if(!isNaN(Number(rotulo))){
+        if(rotulo === "0"){
+            if(conteudoDisplay.length === 1 && conteudoDisplay.includes("0")){
+                alterarDisplay("0")
+            }
+            else{
+                alterarDisplay(conteudoDisplay.concat(rotulo))
+            }
+        }
+
+        else if(conteudoDisplay === "0"){
+            alterarDisplay(rotulo)
+        }
+
+        else if(!isNaN(Number(rotulo))){
             alterarDisplay(conteudoDisplay.concat(rotulo))
         }
+
         else {
             switch(rotulo){
                 case "x": 
@@ -65,8 +78,15 @@ const Calculadora: FunctionComponent = () => {
                     break
                 
                 case ".":
+                    if(ultimoValorDoDisplayEhUmNumero()){
+                        alterarDisplay(conteudoDisplay.concat(rotulo))
+                    }
                     break
                 case "+/-":
+                    const novoValor: number = (Number(conteudoDisplay)) * (-1)
+                    if(!isNaN(novoValor)){
+                        alterarDisplay(novoValor.toString())
+                    }
                     break
 
                 case "=":
