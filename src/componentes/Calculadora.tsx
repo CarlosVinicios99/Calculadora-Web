@@ -27,7 +27,7 @@ const Calculadora: FunctionComponent = () => {
             }
         }
 
-        else if(conteudoDisplay === "0"){
+        else if(conteudoDisplay === "0" && (rotulo === "-" || !isNaN(Number(rotulo)))){
             alterarDisplay(rotulo)
         }
 
@@ -40,8 +40,16 @@ const Calculadora: FunctionComponent = () => {
                 case "x": 
                 case "÷": 
                 case "-": 
-                case "+": 
-                    if(ultimoValorDoDisplayEhUmNumero()){
+                case "+":
+                    if(conteudoDisplay.length === 0 && rotulo !== "-"){
+                        alterarDisplay("")
+                    }
+
+                    else if(conteudoDisplay === "0" && rotulo !== "-"){
+                        alterarDisplay("0")
+                    }
+
+                    else if(ultimoValorDoDisplayEhUmNumero()){
 
                         if(conteudoDisplay.includes("+")){
                             const valores: Array<string> = conteudoDisplay.split("+")
