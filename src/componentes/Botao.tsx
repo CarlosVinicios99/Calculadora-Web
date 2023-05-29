@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react";
 import CorBotao from "./CorBotao";
+import "./css/botao.css"
 
 interface BotaoProps {
     rotulo: string,

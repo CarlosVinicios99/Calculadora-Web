@@ -1,0 +1,17 @@
+.botao-cinza, .botao-verde {
+    width: 5rem;
+    height: 5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.botao-cinza {
+    background-color: rgb(103, 97, 97);
+}
+
+.botao-verde {
+    background-color: rgb(10, 76, 10);
+}
