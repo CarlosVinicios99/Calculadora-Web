@@ -2,6 +2,7 @@ import { FunctionComponent, useState } from "react";
 import Display from "./Display";
 import Botao from "./Botao";
 import CorBotao from "./CorBotao";
+import "./css/calculadora.css"
 
 
 const Calculadora: FunctionComponent = () => {
