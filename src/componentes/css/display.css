@@ -1,12 +1,19 @@
+@font-face {
+    font-family: "DS-Digital";
+    src: local("DS-Digital"), url("./../../../public/fonts/ds_digital/DS-DIGI.TTF");
+}
+
 .display {
-    width: 23rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-family: "DS-Digital";
+    letter-spacing: 0.15rem;
+    width: 22.8rem;
     border-radius: 10px;
     height: 4.3rem;
     background-color: white;
     border: 1px solid rgb(76, 255, 243);;
-    font-size: 2.2rem;
-    padding-left: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    font-size: 3rem;
+    padding-left: 0.6rem;
 }

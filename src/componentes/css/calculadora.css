@@ -1,14 +1,14 @@
 .calculadora-container {
-    width: 26rem;
-    height: 37rem;
+    width: 25rem;
+    height: 36rem;
     border-radius: 25px;
-    border: 1px solid rgb(76, 255, 243);
+    border: 2px solid rgb(76, 255, 243);
     background-color: rgba(0, 0, 0, 0.291);
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
-    padding: 2rem;
+    padding: 1.8rem;
     align-items: center;
 }
 
