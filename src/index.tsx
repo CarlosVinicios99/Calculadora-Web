@@ -10,6 +10,8 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <div className='pagina-calculadora'>
+      <h1>Calculator</h1>
+      <h2>Made with React & Typescript</h2>
       <Calculadora/> 
     </div>
   </React.StrictMode>

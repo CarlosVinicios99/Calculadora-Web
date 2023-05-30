@@ -15,7 +15,7 @@ const Botao: FunctionComponent<BotaoProps> = (props: BotaoProps) => {
     }
 
     return (
-        <button className={props.cor === CorBotao.CINZA ? "botao-cinza": "botao-verde"} onClick={clicarBotao}>
+        <button className={props.cor === CorBotao.CINZA ? "botao-cinza": "botao-azul"} onClick={clicarBotao}>
             {props.rotulo}
         </button>
     )

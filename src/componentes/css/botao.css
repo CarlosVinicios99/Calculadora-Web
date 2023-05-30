@@ -1,4 +1,4 @@
-.botao-cinza, .botao-verde {
+.botao-cinza, .botao-azul {
     width: 5rem;
     height: 5rem;
     font-size: 2rem;
@@ -19,13 +19,13 @@
     transition-duration: 0.4s;
 }
 
-.botao-verde {
+.botao-azul {
     background-color: #00aeff;
     color: white;
     border: 1px solid rgb(76, 255, 243);
 }
 
-.botao-verde:hover{
+.botao-azul:hover{
     background-color: #128ac1;
     transition-duration: 0.4s;
 }

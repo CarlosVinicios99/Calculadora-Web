@@ -1,5 +1,5 @@
 enum CorBotao {
-    VERDE,
+    AZUL,
     CINZA
 }
 

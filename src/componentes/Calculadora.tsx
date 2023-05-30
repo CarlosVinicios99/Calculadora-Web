@@ -194,34 +194,34 @@ const Calculadora: FunctionComponent = () => {
 
             <div className="botoes-container">
                 <div className="linha-de-botoes">
-                    <Botao rotulo="S" cor={CorBotao.VERDE} pressionar={obterRotuloDoBotao}/>
-                    <Botao rotulo="C" cor={CorBotao.VERDE} pressionar={obterRotuloDoBotao}/>
-                    <Botao rotulo="CE" cor={CorBotao.VERDE} pressionar={obterRotuloDoBotao}/>
-                    <Botao rotulo="÷" cor={CorBotao.VERDE} pressionar={obterRotuloDoBotao}/>
+                    <Botao rotulo="S" cor={CorBotao.AZUL} pressionar={obterRotuloDoBotao}/>
+                    <Botao rotulo="C" cor={CorBotao.AZUL} pressionar={obterRotuloDoBotao}/>
+                    <Botao rotulo="CE" cor={CorBotao.AZUL} pressionar={obterRotuloDoBotao}/>
+                    <Botao rotulo="÷" cor={CorBotao.AZUL} pressionar={obterRotuloDoBotao}/>
                 </div>
                 <div className="linha-de-botoes">
                     <Botao rotulo="7" cor={CorBotao.CINZA} pressionar={obterRotuloDoBotao}/>
                     <Botao rotulo="8" cor={CorBotao.CINZA} pressionar={obterRotuloDoBotao}/>
                     <Botao rotulo="9" cor={CorBotao.CINZA} pressionar={obterRotuloDoBotao}/>
-                    <Botao rotulo="x" cor={CorBotao.VERDE} pressionar={obterRotuloDoBotao}/>
+                    <Botao rotulo="x" cor={CorBotao.AZUL} pressionar={obterRotuloDoBotao}/>
                 </div>
                 <div className="linha-de-botoes">
                     <Botao rotulo="4" cor={CorBotao.CINZA} pressionar={obterRotuloDoBotao}/>
                     <Botao rotulo="5" cor={CorBotao.CINZA} pressionar={obterRotuloDoBotao}/>
                     <Botao rotulo="6" cor={CorBotao.CINZA} pressionar={obterRotuloDoBotao}/>
-                    <Botao rotulo="-" cor={CorBotao.VERDE} pressionar={obterRotuloDoBotao}/>
+                    <Botao rotulo="-" cor={CorBotao.AZUL} pressionar={obterRotuloDoBotao}/>
                 </div>
                 <div className="linha-de-botoes">
                     <Botao rotulo="1" cor={CorBotao.CINZA} pressionar={obterRotuloDoBotao}/>
                     <Botao rotulo="2" cor={CorBotao.CINZA} pressionar={obterRotuloDoBotao}/>
                     <Botao rotulo="3" cor={CorBotao.CINZA} pressionar={obterRotuloDoBotao}/>
-                    <Botao rotulo="+" cor={CorBotao.VERDE} pressionar={obterRotuloDoBotao}/>
+                    <Botao rotulo="+" cor={CorBotao.AZUL} pressionar={obterRotuloDoBotao}/>
                 </div>
                 <div className="linha-de-botoes">
                     <Botao rotulo="0" cor={CorBotao.CINZA} pressionar={obterRotuloDoBotao}/>
                     <Botao rotulo="." cor={CorBotao.CINZA} pressionar={obterRotuloDoBotao}/>
                     <Botao rotulo="+/-" cor={CorBotao.CINZA} pressionar={obterRotuloDoBotao}/>
-                    <Botao rotulo="=" cor={CorBotao.VERDE} pressionar={obterRotuloDoBotao}/>
+                    <Botao rotulo="=" cor={CorBotao.AZUL} pressionar={obterRotuloDoBotao}/>
                 </div>
             </div>
         </div>

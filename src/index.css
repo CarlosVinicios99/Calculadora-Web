@@ -2,6 +2,19 @@ body {
   margin: 0;
 }
 
+h1{
+  font-size: 2.3rem;
+  color: white;
+  font-family: Ubuntu;
+}
+
+h2 {
+  margin-top: 0.2rem;
+  color: white;
+  font-family: Ubuntu;
+  margin-bottom: 2rem;
+}
+
 .pagina-calculadora {
   height: 100vh;
   width: 100vw;
