@@ -11,7 +11,7 @@
 .botao-cinza {
     background-color: rgb(210, 209, 209);
     color: black;
-    border: 1px solid rgb(76, 255, 243);
+    border: 1.5px solid rgb(76, 255, 243);
 }
 
 .botao-cinza:hover {
@@ -22,7 +22,7 @@
 .botao-azul {
     background-color: #00aeff;
     color: white;
-    border: 1px solid rgb(76, 255, 243);
+    border: 1.5px solid rgb(76, 255, 243);
 }
 
 .botao-azul:hover{
