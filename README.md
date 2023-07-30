@@ -9,6 +9,4 @@
 <p>
   <img src = "https://github.com/CarlosVinicios99/Calculadora-Web/blob/main/calculadora.jpg?raw=true" alt="Imagem da calculadora">
 </p>
-<br>
-
 <h2>Funcional</h2>
